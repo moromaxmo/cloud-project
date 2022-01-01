@@ -1,0 +1,20 @@
+    <mat-card>
+        <mat-card-title>ENTER YOUR CREDENTIALS</mat-card-title>
+        <mat-card-content>
+            <form id = "formData"  #UserData="ngForm" (ngSubmit)="loginUser(UserData.value)">
+                <mat-form-field>
+                    <input class = "myField" matInput placeholder="username" name = "username" type = "text" ngModel>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <input class = "myField" matInput placeholder="password" name = "password" type = "password" ngModel>
+                </mat-form-field>
+                <br>
+                <div *ngIf="!found">
+                <label>Invalid username/password!</label>
+                <br><br>
+                </div>
+                <input class = "myButton" type = "submit" value = "Log In" mat=button>
+            </form>
+        </mat-card-content>
+    </mat-card>
